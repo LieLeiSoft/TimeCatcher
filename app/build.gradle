@@ -9,7 +9,7 @@ android {
     defaultConfig {
         applicationId "de.TimeCatcher"
         minSdkVersion 17
-        targetSdkVersion 20
+        targetSdkVersion 23
     }
 
     buildTypes {

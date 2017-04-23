@@ -4,6 +4,14 @@
         "source": "D:\\Benutzer\\Eagle\\Android\\AndroidStudioProjects\\TimeCatcher\\app\\src\\main\\res\\drawable-hdpi\\hintergrund.jpg"
     },
     {
+        "merged": "C:\\Users\\Eagle\\Android\\AndroidStudioProjects\\TimeCatcher\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4\\messkolben_hintergrund.jpg",
+        "source": "C:\\Users\\Eagle\\Android\\AndroidStudioProjects\\TimeCatcher\\app\\src\\main\\res\\drawable-hdpi\\messkolben_hintergrund.jpg"
+    },
+    {
+        "merged": "C:\\Users\\Eagle\\Android\\AndroidStudioProjects\\TimeCatcher\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4\\hintergrund.jpg",
+        "source": "C:\\Users\\Eagle\\Android\\AndroidStudioProjects\\TimeCatcher\\app\\src\\main\\res\\drawable-hdpi\\hintergrund.jpg"
+    },
+    {
         "merged": "D:\\Benutzer\\Eagle\\Android\\AndroidStudioProjects\\TimeCatcher\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4\\messkolben_hintergrund.jpg",
         "source": "D:\\Benutzer\\Eagle\\Android\\AndroidStudioProjects\\TimeCatcher\\app\\src\\main\\res\\drawable-hdpi\\messkolben_hintergrund.jpg"
     }
