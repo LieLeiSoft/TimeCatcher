@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="cGold">#FFCC00</color>
+    <color name="cHellblau">#7EA7FC</color>
+    <color name="cHellorange">#FFBB33</color>
+    <color name="cSchwarz">#000000</color>
+    <color name="cWeiss">#FFFFFF</color>
+    <string name="Anfangszeitpunkt">Anfangsuhrzeit</string>
+    <string name="Berechne">Berechne</string>
+    <string name="Doppelpunkt">:</string>
+    <string name="Endzeitpunkt">Enduhrzeit</string>
+    <string name="Endzeitpunkt_h_min">Endzeitpunkt (Std:Min)</string>
+    <string name="Minute">Min.</string>
+    <string name="MinuteEnglisch">m</string>
+    <string name="Plus_Zeitraum"> +  Zeitraum</string>
+    <string name="Stunde">Std.</string>
+    <string name="StundeEnglisch">h</string>
+    <string name="SummeZeitraum">∑ Zeitraum (d/h/m)</string>
+    <string name="Tag">Tag</string>
+    <string name="TagEnglisch">d</string>
+    <string name="Time_Catcher">Time Catcher</string>
+    <string name="Zeitraum">Zeitraum (Std:Min)</string>
+    <string name="app_name">Time Catcher</string>
+    <string name="btn_Ber_Zeitpunkt">Berechnung von Zeitpunkten aus Zeiträumen</string>
+    <string name="btn_Ber_Zeitraum">Berechnung von Zeiträumen aus Zeitpunkten</string>
+    <style name="MySpinnerLook" parent="@android:TextAppearance.Widget.TextView.SpinnerItem">
+		<item name="android:textSize">18sp</item>
+		<item name="android:textColor">@color/cHellblau</item>
+	</style>
+</resources>
