@@ -20,6 +20,7 @@
     <string name="Plus_Zeitraum"> +  Zeitraum</string>
     <string name="SummeZeitraum">∑ Zeitraum (d/h/m)</string>
     <string name="Berechne">Berechne</string>
+    <string name="CSV">CSV</string>
     <color name="cGold">#FFCC00</color>
     <color name="cSchwarz">#000000</color>
     <color name="cHellblau">#7EA7FC</color>
