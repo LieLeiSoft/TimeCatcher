@@ -1,35 +1,27 @@
 package de.TimeCatcher;
 
 import android.Manifest;
+import android.annotation.TargetApi;
 import android.app.Activity;
 import android.content.Context;
 import android.content.pm.PackageManager;
+import android.os.Build;
 import android.os.Bundle;
+import android.support.v4.app.ActivityCompat;
+import android.util.Log;
 import android.view.View;
 import android.view.inputmethod.InputMethodManager;
 import android.widget.EditText;
 import android.widget.TextView;
+import android.support.v4.content.ContextCompat;
 
 import java.io.File;
-import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
-import java.io.FileWriter;
 import java.io.IOException;
-import java.lang.String;
-import java.lang.Object;
 
 
-@SuppressWarnings("unused")
 public class Dummy2Activity extends Activity {
 	int intGesamtMinutenSumme = 0;
-
-	// Storage Permissions
-	private static final int REQUEST_EXTERNAL_STORAGE = 1;
-	private static String[] PERMISSIONS_STORAGE = {
-			Manifest.permission.READ_EXTERNAL_STORAGE,
-			Manifest.permission.WRITE_EXTERNAL_STORAGE
-	};
-
 
 	@Override
 
@@ -44,6 +36,10 @@ public class Dummy2Activity extends Activity {
 		InputMethodManager imm = (InputMethodManager) getSystemService(Context.INPUT_METHOD_SERVICE);
 		imm.showSoftInput(et, InputMethodManager.SHOW_FORCED);
 
+		if (shouldAskPermissions())
+		{
+			askPermissions();
+		}
 	} // public void onCreate
 
 	@Override
@@ -166,33 +162,6 @@ public class Dummy2Activity extends Activity {
 		String [] saveText = new String[] {"Hallo"};
 
 		Save (datei, saveText);
-
-		/*
-		FileWriter datei;
-		FileWriter fw;
-
-		fw = new FileWriter(filePath);
-		try {
-			fw.write("Test1");
-		} finally {
-			fw.close();
-		}
-
-		fw = new FileWriter("fw.txt");
-		try {
-			fw.write("Test2");
-		} finally {
-			fw.close();
-		}
-
-
-		datei = new FileWriter(filePath);
-
-		String data = "Ship Name";
-		datei.write(data);
-
-		datei.close();
-		*/
 	}
 
 	public static void Save(File file, String[] data)
@@ -200,12 +169,13 @@ public class Dummy2Activity extends Activity {
 		FileOutputStream fos = null;
 		try
 		{
+			Log.i("Dummy2Activity", "Save: Datei öffnen" );
 			fos = new FileOutputStream(file);
+			Log.i("Dummy2Activity", "Save: Datei geöffnet" );
 		}
-//		catch (FileNotFoundException e) {e.printStackTrace();}
 		catch (IOException e)
 		{
-			String errormsg = e.getMessage();
+			Log.i("Dummy2Activity", "Save: " + e.getMessage());
 			e.printStackTrace();
 		}
 		try
@@ -233,26 +203,29 @@ public class Dummy2Activity extends Activity {
 		}
 	}
 
-	/**
-	 * Checks if the app has permission to write to device storage
-	 *
-	 * If the app does not has permission then the user will be prompted to grant permissions
-	 *
-	 * @param activity
-	 */
-	/*
-	public static void verifyStoragePermissions(Activity activity) {
+	protected boolean shouldAskPermissions() {
+		if(Build.VERSION.SDK_INT <= Build.VERSION_CODES.LOLLIPOP_MR1) {
+			return false;
+		}
+		int permission = ContextCompat.checkSelfPermission(this, Manifest.permission.WRITE_EXTERNAL_STORAGE);
+		return  (permission != PackageManager.PERMISSION_GRANTED);
+	} // shouldAskPermissions
+
+	@TargetApi(23)
+	protected void askPermissions()
+	{
+		String[] permissions = {
+				"android.permission.READ_EXTERNAL_STORAGE",
+				"android.permission.WRITE_EXTERNAL_STORAGE"
+		};
 		// Check if we have write permission
-		int permission = ActivityCompat.checkSelfPermission(activity, Manifest.permission.WRITE_EXTERNAL_STORAGE);
+		int permission = ActivityCompat.checkSelfPermission(this, Manifest.permission.WRITE_EXTERNAL_STORAGE);
 
 		if (permission != PackageManager.PERMISSION_GRANTED) {
 			// We don't have permission so prompt the user
 			ActivityCompat.requestPermissions(
-					activity,
-					PERMISSIONS_STORAGE,
-					REQUEST_EXTERNAL_STORAGE
-			);
+					this, permissions, 1);
 		}
-	}
-	*/
+	} // askPermissions
+
 }
