@@ -1,14 +1,16 @@
 apply plugin: 'com.android.application'
 android {
     compileSdkVersion 26
-    buildToolsVersion '26.0.2'
+    buildToolsVersion '29.0.2'
 
+    // 'encoding' wird gesetzt, damit Build-Lauf funktioniert (sonst verursachen Umlaute in den Java-Sourcen den Fehler: "error: unmappable character for encoding UTF-8")
     compileOptions { encoding "ISO-8859-1" }
+    // compileOptions { encoding "UTF-8" }
 
     defaultConfig {
         applicationId "de.TimeCatcher"
-        minSdkVersion 17
-        targetSdkVersion 23
+        minSdkVersion 24 // 24= Android 7.0
+        targetSdkVersion 26 // 26= Android 8.0
     }
 
     buildTypes {
@@ -20,5 +22,9 @@ android {
 }
 
 dependencies {
-    compile 'com.android.support:support-v4:26.0.0-alpha1'
+    //compile 'com.android.support:support-v4:26.0.0-alpha1'
+    implementation "com.android.support:support-v4:26.+"
+    implementation "com.android.support:support-v4:26.+"
+    implementation "com.android.support:appcompat-v7:26.+"
+
 }

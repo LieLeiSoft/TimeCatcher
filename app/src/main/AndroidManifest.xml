@@ -14,7 +14,7 @@
         android:allowBackup="true" >
         <activity 
             android:name="de.TimeCatcher.HauptmenueActivity" 
-            android:label="@string/app_name">
+            android:label="@string/app_name"
             android:windowSoftInputMode="stateHidden">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN"/>
